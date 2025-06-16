@@ -2,7 +2,7 @@
 
 A component-level FM transmitter designed from scratch to demonstrate RF system design and PCB layout skills for applications in low-power, narrowband wireless communication.
 
-## 🎯 Project Overview
+## Project Overview
 
 This project showcases a custom-built direct FM transmitter operating at 50 MHz, featuring:
 
@@ -13,8 +13,16 @@ This project showcases a custom-built direct FM transmitter operating at 50 MHz,
 - SAW-filtered RF chain
 - Mixer-based frequency translation
 - Custom 3–5 pole Butterworth bandpass filter at 50 MHz
-- Low-power RF amplifier stage
+- Two-stage Low-power RF amplifier 
 - RF test points and SMA-tapped outputs
 - Designed entirely on a 4-layer impedance-controlled PCB
 
 The full signal chain was analyzed, simulated, and validated using spectrum analyzer + VNA measurements.
+
+## 🔁 Revision History
+
+| Version | Date       | Summary of Changes |
+|---------|------------|--------------------|
+| **MK2** | 2025-06-XX | - Replaced 50 MHz SAW filter with custom 3rd-order Butterworth filter to reduce insertion loss (~11 dB → <1 dB)<br>- Added second-stage amplifier to boost output power into 10–20 dBm range<br>- Inserted impedance-matched Pi attenuator before PA stages to ensure operation within P1dB<br>- Removed redundant RF tap after final amplifier (will probe SMA output directly if needed) |
+| **MK1** | 2025-05-XX | - Initial design using VCO + PLL synthesizer mixed to 50 MHz IF<br>- SAW-filtered RF chain with ~11 dB insertion loss<br>- Single-stage amplifier with two RF taps for debug<br>- Basic 5-pole Butterworth bandpass filter at 50 MHz |
+
