@@ -24,5 +24,6 @@ The full signal chain was analyzed, simulated, and validated using spectrum anal
 | Version | Date       | Summary of Changes |
 |---------|------------|--------------------|
 | **MK2** | 2025-06-XX | - Replaced 50 MHz SAW filter with custom 3rd-order Butterworth filter to reduce insertion loss (~11 dB → <1 dB)<br>- Added second-stage amplifier to boost output power into 10–20 dBm range<br>- Inserted impedance-matched Pi attenuator before PA stages to ensure operation within P1dB<br>- Removed redundant RF tap after final amplifier (will probe SMA output directly if needed) |
-| **MK1** | 2025-05-XX | - Initial design using VCO + PLL synthesizer mixed to 50 MHz IF<br>- SAW-filtered RF chain with ~11 dB insertion loss<br>- Single-stage amplifier with two RF taps for debug<br>- Basic 5-pole Butterworth bandpass filter at 50 MHz |
+| **MK1** | 2025-05-XX | - Initial layout fabricated but not assembled<br>- SAW filter insertion loss (~11 dB) resulted in poor power budget<br>- No sufficient gain staging; final output estimated <1 mW<br>- Identified layout and topology flaws upon physical inspection<br>- Informed redesign of gain chain, filtering, and impedance matching in MK2 |
+
 
