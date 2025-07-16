@@ -4,20 +4,22 @@ A component-level FM transmitter designed from scratch to demonstrate RF system 
 
 ## Project Overview
 
-This project showcases a custom-built direct FM transmitter operating at 50 MHz, featuring:
+As of revision MK4, the system has been fully re-engineered to prioritize **manufacturability, affordability, and modular signal control**. The transmitter features:
 
+- A **free-running VCO** directly modulated with an analog signal to produce wideband FM
+- A **TI LMK61E2 programmable oscillator** used in place of a PLL synthesizer, simplifying the frequency control architecture while maintaining tunability and spectral stability
+- A **mixer stage** that upconverts the modulated VCO signal using the oscillator output, enabling frequency offset generation
+- A flexible **filtering stage**, configurable between a custom-designed 3–5 pole Butterworth bandpass filter and a wideband SAW filter depending on use case
+- A **transformer balun** to convert 200 Ω differential signals to 50 Ω single-ended, improving impedance matching for the final power amplifier
+- A two-stage **low-power RF amplifier chain** redesigned for improved linearity and thermal stability under higher output drive
+- A **programmable digital potentiometer** in the VCO modulation path to dynamically adjust FM deviation and bandwidth
+- An **on-board microcontroller interface** with tuning knob for real-time center frequency control
+- Full **impedance matching** between all major blocks using standard-value passives and Pi attenuators to ensure operation within amplifier P1dB
+- A layout optimized for **low-cost 4-layer PCB fabrication**, using only **common, non-exotic components** to minimize BOM cost and unique part count for low-volume assembly services like JLCPCB
+- RF test points and SMA-tapped outputs for validation and debugging
 
-- A free-running VCO directly modulated with analog input (FM signal source)
-- A stable PLL synthesizer locked to a crystal reference
-- A mixer stage that translates the VCO signal using the PLL output to produce a frequency-offset IF
-- SAW-filtered RF chain
-- Mixer-based frequency translation
-- Custom 3–5 pole Butterworth bandpass filter at 50 MHz
-- Two-stage Low-power RF amplifier 
-- RF test points and SMA-tapped outputs
-- Designed entirely on a 4-layer impedance-controlled PCB
+The complete signal chain was simulated, measured, and iteratively refined based on real VNA and spectrum analyzer results, making this project both a learning platform and a functional RF transmitter.
 
-The full signal chain was analyzed, simulated, and validated using spectrum analyzer + VNA measurements.
 
 ## 🔁 Revision History
 
