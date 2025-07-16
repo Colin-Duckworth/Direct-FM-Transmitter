@@ -1,4 +1,4 @@
-# Direct FM Transmitter (50 MHz)
+# Direct FM Transmitter (80-115 MHz)
 
 A component-level FM transmitter designed from scratch to demonstrate RF system design and PCB layout skills for applications in low-power, narrowband wireless communication.
 
